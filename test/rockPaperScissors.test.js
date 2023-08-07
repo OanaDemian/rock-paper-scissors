@@ -92,7 +92,7 @@ describe('Rock Paper Scissors Game Tests', () => {
       expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
   })
 
-    it(`checks that playerOne looses when playerOneChoice is scissors and playerTwoChoice is rock.`, () => {
+  it(`checks that playerOne looses when playerOneChoice is scissors and playerTwoChoice is rock.`, () => {
       //arrange
       const playerOne = 'Barbie';
       const playerTwo = 'Ken';
@@ -105,6 +105,23 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //assert
       expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
+  })
+
+    it(`returns an error if playerOneChoice is not rock, paper or scissors.`, () => {
+      //arrange
+      const playerOne = 'Barbie';
+      const playerTwo = 'Ken';
+      const playerOneChoice = 'Dog';
+      const playerTwoChoice = 'Rock';
+
+      //act
+      const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
+      try {
+        rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      } catch(error){};
+
+      //assert 
+      expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`Could not determine a winner.`);
   })
 
 })
