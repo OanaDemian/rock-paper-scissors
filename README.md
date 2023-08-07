@@ -60,3 +60,30 @@ Change the game so that two DFAT members can play against each other ( _yes ther
 #### Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+
+## Domain Models
+
+### User Story 1
+
+```
+As a DFAT member
+So that I can enjoy myself away from the daily grind
+I would like to be able to play rock/paper/scissors
+```
+
+| Objects           | Properties      | Messages                     | Output                    |
+| ----------------- | ----------------|------------------------------| --------------------------|
+| Player            | name @String    |                              |                           |
+| RockPaperScissors | nameOne @String |                              |                           |
+|                   | nameTwo@String  | game(playerOneChoice, 
+                                          playerTwoChoice @String)   | @String                   |
+
+
+#### Tests
+1. Tests that RockPaperScissors returns a message when it is a draw.
+2. Tests that paper beats rock.
+3. Tests that rock beats scissors.
+4. Tests that scissors beats paper. 
+5. Tests that paper looses to scissors. 
+6. Tests that scissors looses to rock. 
+7. Tests that rock looses to paper. 
