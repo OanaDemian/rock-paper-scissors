@@ -75,9 +75,10 @@ I would like to be able to play rock/paper/scissors
 | ----------------- | ----------------|------------------------------| --------------------------|
 | Player            | name @String    |                              |                           |
 | RockPaperScissors | nameOne @String |                              |                           |
-|                   | nameTwo@String  | game(playerOneChoice, 
-                                          playerTwoChoice @String)   | @String                   |
-
+|                   | nameTwo@String  | game(playerOneChoice,        |                           |
+|                   |                 |    playerTwoChoice @String)  | @String                   |
+|                   |                 | whoWins(playerOneChoice,     |                           | 
+|                   |                 |    playerTwoChoice @String)  | @Player, @Error           |
 
 #### Tests
 1. Tests that RockPaperScissors returns a message when it is a draw.
