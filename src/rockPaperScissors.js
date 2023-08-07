@@ -14,7 +14,7 @@ export class RockPaperScissors {
 
   }
 
-  whoWins(playerOneChoice, playerTwoChoice) {
+  #privateWhoWins(playerOneChoice, playerTwoChoice) {
    switch (playerOneChoice) {
       case 'Rock':
         return (playerTwoChoice === 'Scissors') ? this.playerOne : this.playerTwo;
