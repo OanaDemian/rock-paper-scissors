@@ -77,8 +77,12 @@ I would like to be able to play rock/paper/scissors
 | RockPaperScissors | nameOne @String |                              |                           |
 |                   | nameTwo@String  | game(playerOneChoice,        |                           |
 |                   |                 |    playerTwoChoice @String)  | @String                   |
-|                   |                 | whoWins(playerOneChoice,     |                           | 
+|                   |                 | #whoWins(playerOneChoice,    |                           | 
 |                   |                 |    playerTwoChoice @String)  | @Player, @Error           |
+|                   |                 | #handleErrors(playerOneChoice|                           |
+|                   |                 |       playerTwoChoice)       | @Error                    |
+| choices @Array[]  |                 |                              |                           |
+
 
 #### Tests
 1. Tests that RockPaperScissors returns a message when it is a draw.
@@ -88,3 +92,4 @@ I would like to be able to play rock/paper/scissors
 5. Tests that paper looses to scissors. 
 6. Tests that scissors looses to rock. 
 7. Tests that rock looses to paper. 
+8. Tests that it throws an error when 
