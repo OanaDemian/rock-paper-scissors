@@ -32,7 +32,7 @@ export class RockPaperScissors {
       case 'Scissors':
         return (playerTwoChoice === 'Paper') ? this.playerOne : this.playerTwo;
      default:
-       throw new Error(`${this.playerOne.name} must enter a valid choice.`);
+       throw new Error(`Players must enter valid choices.`);
     }
   }
 }

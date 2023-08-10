@@ -4,9 +4,10 @@ import { RockPaperScissors } from '../src/rockPaperScissors.js';
 export const router = express.Router();
 
 router.get('/', (req, res) => {
-  if (typeof (req.app.locals.rockPaperScissors) === 'undefined') {
+  if (typeof req.app.locals.rockPaperScissors === "undefined") {
     res.redirect('/');
   }
+  console.log((typeof req.app.locals.rockPaperScissors))
   const playerOne = req.app.locals.rockPaperScissors.playerOne;
   const playerTwo = req.app.locals.rockPaperScissors.playerTwo;
 
