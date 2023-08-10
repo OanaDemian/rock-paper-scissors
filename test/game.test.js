@@ -1,4 +1,3 @@
-import { expect }  from 'chai';
 import  chaiHttp from 'chai-http';
 import { app } from '../app.js';
 import  chai from 'chai';
