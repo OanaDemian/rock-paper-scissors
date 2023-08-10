@@ -1,4 +1,4 @@
-import express, { Router } from 'express'; 
+import express from 'express'; 
 import { router as indexRouter } from './routes/index.js';
 import { router as gameRouter } from './routes/game.js';
 
