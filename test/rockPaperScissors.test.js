@@ -11,10 +11,10 @@ describe('Rock Paper Scissors Game Tests', () => {
     const choice = 'Rock';
     //act
     const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-    const result = rockPaperScissors.game(choice, choice);
+    rockPaperScissors.game(choice, choice);
 
     //assert
-    expect(result).to.equal( `${playerOne} and ${playerTwo} both played ${choice}. It's a draw!`);
+    expect(rockPaperScissors.lastGame).to.equal( `${playerOne} and ${playerTwo} both played ${choice}. It's a draw!`);
   })
 
   it(`checks that playerOne wins when playerOneChoice is rock and playerTwoChoice is scissors.`, () => {
@@ -26,10 +26,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
   })
 
   it(`checks that playerOne wins when playerOneChoice is paper and playerTwoChoice is rock.`, () => {
@@ -41,10 +41,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
     })
   
   it(`checks that playerOne wins when playerOneChoice is scissors and playerTwoChoice is paper.`, () => {
@@ -56,10 +56,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerOne} wins.`);
   })
 
   it(`checks that playerOne looses when playerOneChoice is rock and playerTwoChoice is paper.`, () => {
@@ -71,10 +71,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
   })
 
   it(`checks that playerOne looses when playerOneChoice is paper and playerTwoChoice is scissors.`, () => {
@@ -86,10 +86,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
   })
 
   it(`checks that playerOne looses when playerOneChoice is scissors and playerTwoChoice is rock.`, () => {
@@ -101,10 +101,10 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      const result = rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      rockPaperScissors.game(playerOneChoice, playerTwoChoice);
 
       //assert
-      expect(result).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
+      expect(rockPaperScissors.lastGame).to.equal(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
   })
 
   it(`returns an error if playerOneChoice is not rock, paper or scissors.`, () => {
@@ -121,7 +121,7 @@ describe('Rock Paper Scissors Game Tests', () => {
       } catch(error){};
 
       //assert 
-      expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerOne} must enter a valid choice.`);
+      expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerOneChoice} must be a valid choice.`);
   })
 
     it(`returns an error if playerTwoChoice is not rock, paper or scissors.`, () => {
@@ -138,7 +138,7 @@ describe('Rock Paper Scissors Game Tests', () => {
       } catch(error){};
 
       //assert 
-      expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerTwo} must enter a valid choice.`);
+      expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerTwoChoice} must be a valid choice.`);
   })
 
 })
