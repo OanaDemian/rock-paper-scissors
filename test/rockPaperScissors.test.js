@@ -123,7 +123,7 @@ describe('Rock Paper Scissors Game Tests', () => {
       expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerOneChoice} must be a valid choice.`);
   })
 
-    it(`returns an error if playerTwoChoice is not rock, paper or scissors.`, () => {
+  it(`returns an error if playerTwoChoice is not rock, paper or scissors.`, () => {
       //arrange
       const playerOne = 'Barbie';
       const playerTwo = 'Ken';
@@ -138,6 +138,23 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //assert 
       expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerTwoChoice} must be a valid choice.`);
+  })
+
+  it(`returns an error if player names are undefined.`, () => {
+      //arrange
+      const playerOne = undefined;
+      const playerTwo = 'Ken';
+      const playerOneChoice = 'Paper';
+      const playerTwoChoice = 'Rock';
+
+      //act
+      const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
+      try {
+        rockPaperScissors.game(playerOneChoice, playerTwoChoice);
+      } catch(error){};
+
+      //assert 
+      expect(() => rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`Players must register their names.`);
   })
 
 })

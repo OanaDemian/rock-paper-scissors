@@ -9,6 +9,7 @@ export class RockPaperScissors {
 
   game(playerOneChoice, playerTwoChoice) {
     this.#handlesErrors(playerOneChoice, playerTwoChoice);
+    if ((this.playerOne.name === undefined) || (this.playerTwo.name === undefined)) throw new Error(`Players must register their names.`);
     if (playerOneChoice === playerTwoChoice) {
       this.lastGame = `${this.playerOne.name} and ${this.playerTwo.name} both played ${playerOneChoice}. It's a draw!`;
       return
