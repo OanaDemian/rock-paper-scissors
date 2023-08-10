@@ -83,6 +83,17 @@ I would like to be able to play rock/paper/scissors
 |                   |                 |       playerTwoChoice)       | @Error                    |
 | choices @Array[]  |                 |                              |                           |
 
+### User Story 2
+
+As a DFAT member
+So that I can see my name
+I would like to register my name before playing an online game
+
+| Views    | Description |
+|--------  |------------------------------------------------|
+| index.ejs| landing page where players register their names|
+| game.ejs |             |
+|          |             |
 
 #### Tests
 1. Tests that RockPaperScissors returns a message when it is a draw.
@@ -92,4 +103,8 @@ I would like to be able to play rock/paper/scissors
 5. Tests that paper looses to scissors. 
 6. Tests that scissors looses to rock. 
 7. Tests that rock looses to paper. 
-8. Tests that it throws an error when 
+8. Tests that it throws an error when  
+ 
+## Data Flow
+          
+App.js ---> index.ejs ---> game.js ---> 

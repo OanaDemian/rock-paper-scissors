@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { RockPaperScissors } from "../src/rockPaperScissors.js";
 
-
 describe('Rock Paper Scissors Game Tests', () => {
 
   it(`returns draw when players make the same choice`, () => {

@@ -1,15 +1,13 @@
-import  chaiHttp from 'chai-http';
 import { app } from '../app.js';
-import  chai from 'chai';
+import  chai from './chai-local.js';
 
-chai.use(chaiHttp);
-chai.should();
 describe(`game router tests`, () => {
 
-  it(`checks that posting to new game returns a redirect`, done => {
+  it(`checks post requests to /game/new`, done => {
     chai
       .request(app)
-      .post("/game/new")
+      .post('/game/new')
+      .type('form')
       .send({
         playerOne: "Barbie",
         playerTwo: "Ken"
@@ -18,6 +16,6 @@ describe(`game router tests`, () => {
       .end((err, res, body) => {
         res.should.have.status(302);
         done();
-      });
+      })
   });
 });
