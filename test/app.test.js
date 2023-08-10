@@ -2,7 +2,7 @@ import { expect }  from 'chai';
 import { app } from '../app.js';
 import  chai from './chai-local.js';
 
-describe(`app router tests`, () => { 
+describe(`app router`, () => { 
   let testServer;
   beforeEach(() => {
     testServer = chai.request(app).keepOpen();
@@ -33,6 +33,18 @@ describe(`app router tests`, () => {
     const res = await testServer.get(`/game`);
     expect(res).to.have.status(200);
     expect(res.text).to.contain(`Fight!`);
+    expect(res).to.be.html;
+  });
+
+  it(`update lastGame value when /game posted it`, async () => {
+    await testServer.post(`/game`).type('form')
+    .send({
+      playerOneChoice: "Rock",
+      playerTwoChoice: "Paper"
+    })
+    const res = await testServer.get(`/game`);
+    expect(res).to.have.status(200);
+    expect(res.text).to.contain(`Barbie played Rock. Ken played Paper. Ken wins.`);
     expect(res).to.be.html;
   });
 });
