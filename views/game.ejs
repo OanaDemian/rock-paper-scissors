@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Fight! </h1>
+    <form action="/game" method="post">
+       <label for="choices">Make your choice: Rock, Paper or Scissors?</label>
+        <br><br>
+      <%= playerOne %>
+          <select name="playerOneChoice" id="playerOneChoice">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+        </select>
+        <br><br>
+        <%= playerTwo %>
+        <select name="playerTwoChoice" id="playerTwoChoice">
+            <option value="Rock">Rock</option>
+            <option value="Paper">Paper</option>
+            <option value="Scissors">Scissors</option>
+        </select>
+        <br><br>
+      <input id="choice" type="submit" value="Make a choice">
+    </form>
+     <form action="/" method="get">
+    <%if (lastGame !== undefined) { %>
+    <h3><%= lastGame %></h3>
+     <% } %>
+     </form>
+  </body>
+</html>
+ 
