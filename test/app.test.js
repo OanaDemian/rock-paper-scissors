@@ -5,17 +5,17 @@ import  chai from './chai-local.js';
 
 describe(`app router`, () => { 
   let testServer;
-  const playerOne = "Barbie"
-  const playerTwo = "Ken"
-  const playerOneChoice = "Rock"
-  const playerTwoChoice = "Paper"
+  let playerOne = "Barbie";
+  let playerTwo = "Ken";
+  const playerOneChoice = "Rock";
+  const playerTwoChoice = "Paper";
 
   beforeEach(() => {
     testServer = chai.request(app).keepOpen();
   })
 
   afterEach(() => {
-    testServer.close()
+    testServer.close();
   })
 
   it(`checks get request to the /game route redirects to index page when rockPaperScissors undefined`, async () => {
@@ -30,6 +30,17 @@ describe(`app router`, () => {
     expect(res).to.be.html;
   });
   
+  it(`checks get request to the /game route redirects to / when player information not sent`, async () => {
+    await testServer.post(`/game/new`).type('form')
+    .send({
+      playerOne: "",
+      playerTwo: ""
+    })
+    .redirects(0)
+      .end((err, res) => {
+      expect(res).to.have.status(302);
+    })
+  });
   it(`checks get request to the /game route renders the game page when player information successfully sent`, async () => {
     await testServer.post(`/game/new`).type('form')
     .send({
@@ -55,4 +66,6 @@ describe(`app router`, () => {
     expect(res.text).to.contain(`${playerOne} played ${playerOneChoice}. ${playerTwo} played ${playerTwoChoice}. ${playerTwo} wins.`);
     expect(res).to.be.html;
   });
+
+
 });
