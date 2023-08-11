@@ -1,1 +1,1 @@
-export const choices = Object.freeze(['Rock', 'Paper', 'Scissors']);
+export const choices = Object.freeze(["Rock", "Paper", "Scissors"]);

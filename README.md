@@ -1,26 +1,25 @@
 # RPS Challenge
 
-Instructions
--------
+## Instructions
 
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or trainee, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by the deadline specified in Noodle
+- Feel free to use google, your notes, books, etc. but work on your own
+- If you refer to the solution of another coach or trainee, please put a link to that in your README
+- If you have a partial solution, **still check in a partial solution**
+- You must submit a pull request to this repo with your code by the deadline specified in Noodle
 
-Task
-----
+## Task
 
 The DFA team ( **DFAT** ) have asked you to provide a game for them. The daily grind is pretty tough and they need time to have a little fun.
 
 As usual please start by
 
-* Forking this repo
-* TEST driving development of your app
+- Forking this repo
+- TEST driving development of your app
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
 ### Acceptance Criteria
+
 ```
 As a DFAT member
 So that I can see my name
@@ -47,9 +46,9 @@ Hints on functionality
 
 In code review we'll be hoping to see:
 
-* All tests passing
-* High test coverage
-* The code is elegant: every class has a clear responsibility, methods are short etc.
+- All tests passing
+- High test coverage
+- The code is elegant: every class has a clear responsibility, methods are short etc.
 
 ### Extended Acceptance Criteria
 
@@ -71,17 +70,17 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-| Objects           | Properties      | Messages                     | Output                    |
-| ----------------- | ----------------|------------------------------| --------------------------|
-| Player            | name @String    |                              |                           |
-| RockPaperScissors | nameOne @String |                              |                           |
-|                   | nameTwo@String  | game(playerOneChoice,        |                           |
-|                   |                 |    playerTwoChoice @String)  | @String                   |
-|                   |                 | #whoWins(playerOneChoice,    |                           | 
-|                   |                 |    playerTwoChoice @String)  | @Player, @Error           |
-|                   |                 | #handleErrors(playerOneChoice|                           |
-|                   |                 |       playerTwoChoice)       | @Error                    |
-| choices @Array[]  |                 |                              |                           |
+| Objects           | Properties      | Messages                      | Output          |
+| ----------------- | --------------- | ----------------------------- | --------------- |
+| Player            | name @String    |                               |                 |
+| RockPaperScissors | nameOne @String |                               |                 |
+|                   | nameTwo@String  | game(playerOneChoice,         |                 |
+|                   |                 | playerTwoChoice @String)      | @String         |
+|                   |                 | #whoWins(playerOneChoice,     |                 |
+|                   |                 | playerTwoChoice @String)      | @Player, @Error |
+|                   |                 | #handleErrors(playerOneChoice |                 |
+|                   |                 | playerTwoChoice)              | @Error          |
+| choices @Array[]  |                 |                               |                 |
 
 ### User Story 2
 
@@ -89,22 +88,23 @@ As a DFAT member
 So that I can see my name
 I would like to register my name before playing an online game
 
-| Views    | Description |
-|--------  |------------------------------------------------|
-| index.ejs| landing page where players register their names|
-| game.ejs |             |
-|          |             |
+| Views     | Description                                     |
+| --------- | ----------------------------------------------- |
+| index.ejs | landing page where players register their names |
+| game.ejs  |                                                 |
+|           |                                                 |
 
 #### Tests
+
 1. Tests that RockPaperScissors returns a message when it is a draw.
 2. Tests that paper beats rock.
 3. Tests that rock beats scissors.
-4. Tests that scissors beats paper. 
-5. Tests that paper looses to scissors. 
-6. Tests that scissors looses to rock. 
-7. Tests that rock looses to paper. 
-8. Tests that it throws an error when  
- 
+4. Tests that scissors beats paper.
+5. Tests that paper looses to scissors.
+6. Tests that scissors looses to rock.
+7. Tests that rock looses to paper.
+8. Tests that it throws an error when
+
 ## Data Flow
-          
-App.js ---> index.ejs ---> game.js ---> 
+
+App.js ---> index.ejs ---> game.js --->
