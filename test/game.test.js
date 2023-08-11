@@ -14,7 +14,7 @@ describe(`game router tests`, () => {
         playerTwo: "Ken"
       })
       .redirects(0)
-      .end((res) => {
+      .end((err, res) => {
         res.should.have.status(302);
         done();
       })
