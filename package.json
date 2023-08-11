@@ -7,6 +7,8 @@
   "scripts": {
     "start": "nodemon app",
     "test": "NODE_ENV=test mocha --timeout=10000 --exit",
+    "lint": "npx eslint . ",
+    "lint:fix": "npx eslint --fix . ",
     "coverage": "NODE_ENV=test c8 npm test"
   },
   "author": "Oana Demian",
@@ -20,6 +22,7 @@
     "mocha": "^10.2.0"
   },
   "devDependencies": {
-    "c8": "^8.0.1"
+    "c8": "^8.0.1",
+    "eslint": "^8.46.0"
   }
 }

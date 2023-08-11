@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { app } from '../app.js';
 import  chai from './chai-local.js';
 
@@ -13,7 +14,7 @@ describe(`game router tests`, () => {
         playerTwo: "Ken"
       })
       .redirects(0)
-      .end((err, res, body) => {
+      .end((res) => {
         res.should.have.status(302);
         done();
       })
