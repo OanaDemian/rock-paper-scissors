@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { expect } from 'chai';
 import { RockPaperScissors } from "../src/rockPaperScissors.js";
 
@@ -116,10 +115,6 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      try {
-        rockPaperScissors.game(playerOneChoice, playerTwoChoice);
-      // eslint-disable-next-line no-empty
-      } catch(error){}
 
       //assert 
       expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerOneChoice} must be a valid choice.`);
@@ -134,10 +129,6 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      try {
-        rockPaperScissors.game(playerOneChoice, playerTwoChoice);
-      // eslint-disable-next-line no-empty
-      } catch(error){}
 
       //assert 
       expect(() =>  rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`${playerTwoChoice} must be a valid choice.`);
@@ -153,10 +144,6 @@ describe('Rock Paper Scissors Game Tests', () => {
 
       //act
       const rockPaperScissors = new RockPaperScissors(playerOne, playerTwo);
-      try {
-        rockPaperScissors.game(playerOneChoice, playerTwoChoice);
-      // eslint-disable-next-line no-empty
-      } catch(error){}
 
       //assert 
       expect(() => rockPaperScissors.game(playerOneChoice, playerTwoChoice)).to.throw(`Players must register their names.`);

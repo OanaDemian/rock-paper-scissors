@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { expect }  from 'chai';
 import { app } from '../app.js';
 import  chai from './chai-local.js';
