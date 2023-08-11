@@ -2,7 +2,7 @@ import { app } from "../app.js";
 import chai from "./chai-local.js";
 
 describe(`game router tests`, () => {
-  it(`checks post requests to /game/new`, async () => {
+  it(`checks post requests to /game/new redirects`, async () => {
     await chai
       .request(app)
       .post("/game/new")
