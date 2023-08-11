@@ -3,13 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app",
+    "test": "NODE_ENV=test mocha --timeout=10000 --exit",
+    "lint": "npx eslint . ",
+    "lint:fix": "npx eslint --fix . ",
+    "coverage": "NODE_ENV=test c8 npm test"
   },
-  "author": "dearshrewdwit",
+  "author": "Oana Demian",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "c8": "^8.0.1",
+    "eslint": "^8.46.0"
   }
 }
