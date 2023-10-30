@@ -6,6 +6,8 @@ const port = 3000;
 export const app = express();
 
 app.set("view engine", "ejs");
+app.use(express.static("src"));
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);

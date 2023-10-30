@@ -6,44 +6,44 @@ The DFA team ( **DFAT** ) have asked you to provide a _Rock, Paper, Scissors_ ga
 
 Two DFAT members can play against each other ( _yes there are two of them and they'll be playing on the same computer_ )
 
-## Instructions
-
-1. Fork this repository and then:
-
-```sh
-$ git clone https://github.com/<YOUR GITHUB USERNAME>/rock-paper-scissors-challenge.git && cd rock-paper-scissors-challenge
-$ npm install # installs dependencies listed in package.json
-```
-
-2. Run the tests from your project root directory.
-
-```sh
-$ npm test
-```
-
-3. To see the test coverage report run:
-
-```sh
-$ npm run coverage
-```
-
-4. To lint you project run:
-
-```sh
-$ npm run lint
-```
-
-5. To fix linting issues run;
-
-```sh
-$ npm run lint:fix
-```
-
-6. To format your code run;
-
-```sh
-$ npx prettier --write .
-```
+  ## Instructions
+  
+  1. Fork this repository and then:
+  
+  ```sh
+  $ git clone https://github.com/<YOUR GITHUB USERNAME>/rock-paper-scissors-challenge.git && cd rock-paper-scissors-challenge
+  $ npm install # installs dependencies listed in package.json
+  ```
+  
+  2. Run the tests from your project root directory.
+  
+  ```sh
+  $ npm test
+  ```
+  
+  3. To see the test coverage report run:
+  
+  ```sh
+  $ npm run coverage
+  ```
+  
+  4. To lint you project run:
+  
+  ```sh
+  $ npm run lint
+  ```
+  
+  5. To fix linting issues run;
+  
+  ```sh
+  $ npm run lint:fix
+  ```
+  
+  6. To format your code run;
+  
+  ```sh
+  $ npx prettier --write .
+  ```
 
 ## Domain Model for Rock Paper Scissors Game
 
@@ -133,3 +133,4 @@ takes input to
 4. GET request to the /game route renders the game page when player information successfully sent
 5. Update lastGame value when /game posted it
 6. POST requests to /game/new redirects
+
